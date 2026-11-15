@@ -129,7 +129,6 @@ module or VCS build metadata, including commit versions and the `+dirty` suffix
 when available. Builds without version metadata show `dev`. Snapshot builds embed
 a distinct snapshot version and do not publish.
 
-
 ### Package managers
 
 The application repository also serves as a Homebrew tap and a Scoop bucket.

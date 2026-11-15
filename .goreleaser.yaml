@@ -21,6 +21,20 @@ builds:
     ldflags:
       - -s -w -X github.com/jadegopher/trabbit/internal/version.buildVersion={{.Version}}
 
+# Stable and prerelease binaries must be notarized before packaging.
+# Local snapshots do not use Apple credentials or submit binaries to Apple.
+notarize:
+  macos:
+    - enabled: '{{ not .IsSnapshot }}'
+      sign:
+        certificate: '{{ .Env.MACOS_SIGN_P12 }}'
+        password: '{{ .Env.MACOS_SIGN_PASSWORD }}'
+      notarize:
+        issuer_id: '{{ .Env.MACOS_NOTARY_ISSUER_ID }}'
+        key_id: '{{ .Env.MACOS_NOTARY_KEY_ID }}'
+        key: '{{ .Env.MACOS_NOTARY_KEY }}'
+        wait: true
+
 archives:
   - formats: [tar.gz]
     format_overrides:
