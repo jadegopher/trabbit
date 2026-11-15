@@ -1,7 +1,5 @@
 <div align="center">
 
-# trabbit
-
 [![CI](https://img.shields.io/github/actions/workflow/status/jadegopher/trabbit/ci.yml?branch=main&style=flat-square&label=tests)](https://github.com/jadegopher/trabbit/actions/workflows/ci.yml)
 [![Go](https://img.shields.io/github/go-mod/go-version/jadegopher/trabbit?style=flat-square&logo=go)](go.mod)
 [![Release](https://img.shields.io/github/v/release/jadegopher/trabbit?style=flat-square)](https://github.com/jadegopher/trabbit/releases)
@@ -10,9 +8,6 @@
 [Install](#install) · [Connect](#connect) · [Contribute](CONTRIBUTING.md)
 
 </div>
-
-**RabbitMQ administration, right in your terminal.**
-
 
 ![tRabbit demo: create a queue, edit and publish JSON, then explore queue statistics](docs/demo.gif)
 
@@ -36,23 +31,58 @@ functionality myself. Have something in mind? [Open an issue](https://github.com
 
 ## Install
 
+### macOS — Homebrew
+
+With [Homebrew](https://brew.sh/) installed:
+
+```sh
+brew tap jadegopher/trabbit https://github.com/jadegopher/trabbit
+brew install --cask jadegopher/trabbit/trabbit
+```
+
+Update with `brew upgrade --cask jadegopher/trabbit/trabbit`.
+
+### Windows — Scoop
+
+With [Scoop](https://scoop.sh/) installed, run in PowerShell:
+
+```powershell
+scoop bucket add trabbit https://github.com/jadegopher/trabbit
+scoop install trabbit/trabbit
+```
+
+Update with `scoop update trabbit`. Both package managers select the matching
+amd64 or arm64 binary.
+
+### Linux — download with curl
+
+For Linux amd64, download into the directory where you want to keep the binary:
+
+```sh
+curl -fL https://github.com/jadegopher/trabbit/releases/download/v0.1.0/trabbit_0.1.0_linux_amd64.tar.gz | tar -xz trabbit
+sudo ln -sf "$PWD/trabbit" /usr/local/bin/trabbit
+```
+
+Use `arm64` instead of `amd64` for ARM machines. On macOS, the same commands work
+with `darwin` instead of `linux`. Choose your version from
+[Releases](https://github.com/jadegopher/trabbit/releases); rerun the download to
+upgrade. Keep the extracted binary in place—the symlink points to it.
+
+On Windows without Scoop, download the matching `windows_amd64.zip` or
+`windows_arm64.zip` from Releases, extract it, and add its directory to your user
+`PATH`.
+
+### Go or source — all platforms
+
 With [Go](https://go.dev/dl/) installed:
 
 ```sh
 go install github.com/jadegopher/trabbit/cmd/trabbit@latest
 ```
 
-Or download a binary for your OS and architecture from
+To build from source, follow [CONTRIBUTING.md](CONTRIBUTING.md#development).
+Archives for every supported OS and architecture are also available on
 [GitHub Releases](https://github.com/jadegopher/trabbit/releases).
-
-To build from source:
-
-```sh
-git clone https://github.com/jadegopher/trabbit.git
-cd trabbit
-mise install
-mise exec -- go build -o trabbit ./cmd/trabbit
-```
 
 ## Connect
 

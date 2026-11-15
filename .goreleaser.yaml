@@ -34,5 +34,29 @@ archives:
 checksum:
   name_template: checksums.txt
 
+homebrew_casks:
+  - name: trabbit
+    binaries: [trabbit]
+    homepage: https://github.com/jadegopher/trabbit
+    description: RabbitMQ administration in your terminal
+    directory: Casks
+    skip_upload: auto
+    repository:
+      owner: jadegopher
+      name: trabbit
+      branch: main
+
+scoops:
+  - name: trabbit
+    homepage: https://github.com/jadegopher/trabbit
+    description: RabbitMQ administration in your terminal
+    license: MIT
+    directory: bucket
+    skip_upload: auto
+    repository:
+      owner: jadegopher
+      name: trabbit
+      branch: main
+
 changelog:
   disable: true

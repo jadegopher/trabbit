@@ -128,3 +128,17 @@ The CLI and UI share `version.Current`. Outside GoReleaser, versions come from G
 module or VCS build metadata, including commit versions and the `+dirty` suffix
 when available. Builds without version metadata show `dev`. Snapshot builds embed
 a distinct snapshot version and do not publish.
+
+
+### Package managers
+
+The application repository also serves as a Homebrew tap and a Scoop bucket.
+`Casks/trabbit.rb` and `bucket/trabbit.json` point to published release assets.
+GoReleaser regenerates both after each stable release using the workflow's
+`GITHUB_TOKEN` with `contents: write`; no separate repository or token is needed.
+Keep these files generated from released assets and checksums rather than editing
+versions independently. Prereleases leave the stable package manifests unchanged.
+
+Release jobs run sequentially so two releases cannot update the manifests at the
+same time. Once a tag has been published, keep its history intact and make new
+changes as ordinary commits.
