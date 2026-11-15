@@ -1,0 +1,21 @@
+[tools]
+# Manage the local RabbitMQ broker with Docker Compose.
+docker-cli = "29.4.2"
+
+# Build, test, and format the Go application.
+go = "1.27.4"
+
+# Generate test mocks.
+mockery = "2.53.8"
+
+# Package release binaries, archives, and checksums.
+goreleaser = "2.20.2"
+
+# Record the README terminal demo from docs/demo.tape.
+vhs = "0.12.1"
+
+# Provide the browser terminal used by VHS; conda supports macOS.
+"conda:ttyd" = "1.7.7"
+
+# Encode the demo frames into a GIF for VHS.
+ffmpeg = "9.0.2"

@@ -1,0 +1,12 @@
+╭──────────────────────────────────────╮
+│                                      │
+│                Error                 │
+│                                      │
+│  This is a very long error message   │
+│   that should definitely be longer   │
+│   than forty characters to see how   │
+│   it behaves in the modal window.    │
+│                                      │
+│              any close               │
+│                                      │
+╰──────────────────────────────────────╯

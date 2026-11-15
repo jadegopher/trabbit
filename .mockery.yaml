@@ -1,0 +1,12 @@
+dir: "internal/tui/mocks"
+filename: "mock_{{.InterfaceName}}.go"
+mockname: "Mock{{.InterfaceName|camelcase}}"
+outpkg: "mocks"
+with-expecter: true
+packages:
+  github.com/jadegopher/trabbit/internal/app:
+    interfaces:
+      Backend:
+        config:
+          filename: mock_QueueClient.go
+          mockname: MockQueueClient

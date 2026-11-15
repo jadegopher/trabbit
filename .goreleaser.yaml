@@ -1,0 +1,38 @@
+# GoReleaser configuration schema version.
+version: 2
+
+project_name: trabbit
+
+builds:
+  - main: ./cmd/trabbit
+    binary: trabbit
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    flags:
+      - -trimpath
+    # Embed the tag-derived version shared by the CLI and UI.
+    ldflags:
+      - -s -w -X github.com/jadegopher/trabbit/internal/version.buildVersion={{.Version}}
+
+archives:
+  - formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    files:
+      - LICENSE
+      - README.md
+      - docs/cli.md
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  disable: true
