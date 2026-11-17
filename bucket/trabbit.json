@@ -1,19 +1,19 @@
 {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/jadegopher/trabbit/releases/download/v0.1.0/trabbit_0.1.0_windows_amd64.zip",
+            "url": "https://github.com/jadegopher/trabbit/releases/download/v0.1.1/trabbit_0.1.1_windows_amd64.zip",
             "bin": [
                 "trabbit.exe"
             ],
-            "hash": "c1797652c8d5de30a0aaeb5fd0cc5aa0443add900ef15427d2c8ccd04b870355"
+            "hash": "84ed5b3d9393332b50480a25aa938d79c0d75c6cb214455d16c5d62e067bbfe7"
         },
         "arm64": {
-            "url": "https://github.com/jadegopher/trabbit/releases/download/v0.1.0/trabbit_0.1.0_windows_arm64.zip",
+            "url": "https://github.com/jadegopher/trabbit/releases/download/v0.1.1/trabbit_0.1.1_windows_arm64.zip",
             "bin": [
                 "trabbit.exe"
             ],
-            "hash": "71510c20142534977038fdf13059bc729fbfa294392708ad1cf7935f71decab9"
+            "hash": "64284014eccab7b4449bb6c57fd57db681c36812d613c2f5764052eb5a85bb28"
         }
     },
     "homepage": "https://github.com/jadegopher/trabbit",
